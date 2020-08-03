@@ -1,0 +1,40 @@
+<h3>Edit story</h3>
+<div class="row">
+    <form action="/stories/{{story._id}}" method="POST" class="col s12">
+       <input type="hidden" name='_method' value="PUT">  
+       <div class="row">
+           <div class="input-field">
+               <input type="text" id='title' name='title' value='{{story.title}}'>
+               <label for="title">Title</label>
+           </div>
+       </div>   
+
+       <div class="row">
+           <div class="input-field">
+               <select name="status" id="status" >
+                   {{#select story.status}}
+                   <option value='public'>public</option>
+                   <option value='private'>private</option>
+                   {{/select}}
+               </select>
+               <label for="status">Status</label>
+           </div>
+       </div>
+
+       <div class="row">
+           <div class="input-field">
+               <h5>Tell Us Your Story:</h5>
+               <textarea name="body" id="body">{{story.body}}</textarea>
+           </div>
+       </div>
+
+       <div class="row">
+           <input type='submit' value='save' class='btn'>
+           <a href="/dashboard" class='btn orange'>Cancel</a>
+       </div>
+    </form>
+</div>
+
+
+{{!--  'select' is a handlebars helper passed in from (app.js|hbs.js), it takes in two arguments, the first is story.status, the second is the select options.
+       Notice the options are wrapped around, (my guess is, when more than one element make up a single argument, it is done this way).  --}}

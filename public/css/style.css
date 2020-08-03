@@ -1,0 +1,35 @@
+p {
+  margin: 10px 0 !important;
+}
+.login-container {
+  width: 400px;
+  margin-top: 50px;
+  text-align: center;
+}
+.foo-small {
+  font-size: 16px !important;
+}
+.btn-float {
+  float: left;
+  margin-right: 10px;
+}
+.img-small {
+  width: 180px;
+}
+.login-btn-color :hover {
+  background-color: #3f3d56 !important;
+}
+@media (max-width: 400px) {
+  .login-container {
+    width: 100%;
+    margin-top: 50px;
+    text-align: center;
+  }
+  th {
+    text-align: center;
+  }
+  .titleShort {
+    max-width: 78px !important;
+    word-wrap: break-word;
+  }
+}

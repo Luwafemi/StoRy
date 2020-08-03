@@ -1,0 +1,51 @@
+<h1>Stories</h1>
+<div class="row">
+   
+    {{#each stories}}
+
+        <div class="col s12 m4">
+            <div  class="card">
+                <div class="card-image">
+                    {{{editIcon user ../user _id}}}
+                </div>
+                <div class="card-content center-align">
+                    <h5>{{title}}</h5>
+                    <p >{{stripTags (truncate body 150)}}</p>
+                    <br>
+                    <div class="chip">
+                        <img src="{{user.image}}" alt="">
+                        <a href="/stories/user/{{user._id}}">{{user.displayName}}</a>
+                    </div>
+                </div>
+                <div class="card-action center-align">
+                    <a href="/stories/{{_id}}" class="btn grey">Read More</a>
+                </div>
+            </div>
+        </div>
+    {{else}}
+    <p>No stories to display</p>
+    {{/each}}
+</div>
+
+
+
+
+  {{!-- We bring in user [../user] (a global variable set in app.js). This is one way we can have access to user [../user] (logged in user from  req.user, from passport).
+        Notice we have two 'user', the first is 'stories.user', the second (../user) is the global variable brought in. [../user (Reads: Go back one step, out of the stories loop)]. 
+        We access it using [../user] only bcos it is within the stories loop, otherwise, we access it normally using {{user}}
+        A second way we could have access to 'req.user' is to bring it in from stories router.
+ --}}
+  {{!-- editIcon helper returns html. To parse html with handlebars, we enclose in 3 curly braces (line 9) --}}
+
+  {{!-- stripTags, truncate, editIcon are handlebars helpers passed in from (app.js|hbs.js) --}}
+
+
+
+
+        {{!--                           {{#each stories}}                                   {{#if stories}}
+                                        ...                                                     {{#each stories}}
+                                        {{else}}                          ==                        ...
+                                        ...                                                      {{/each}}
+                                        {{/each}}                                           {{else}}
+                                                                                              ... 
+                                                                                            {{/if}}                       --}}

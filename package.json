@@ -1,0 +1,31 @@
+{
+  "name": "storybooks",
+  "version": "1.0.0",
+  "description": "App to create public and private stories",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app",
+    "dev": "cross-env NODE_ENV=development nodemon app"
+  },
+  "author": "Luwafemi",
+  "license": "MIT",
+  "dependencies": {
+    "connect-mongo": "^3.2.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.4",
+    "express-session": "^1.17.1",
+    "method-override": "^3.0.0",
+    "moments": "0.0.2",
+    "mongoose": "^5.9.20",
+    "morgan": "^1.10.0",
+    "passport": "^0.4.1",
+    "passport-google-oauth20": "^2.0.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.2",
+    "nodemon": "^2.0.4",
+    "webpack": "^4.44.0",
+    "webpack-cli": "^3.3.12"
+  }
+}
