@@ -4,7 +4,7 @@
   "description": "App to create public and private stories",
   "main": "app.js",
   "scripts": {
-    "start": "node app",
+    "start": "cross-env NODE_ENV=production node app",
     "dev": "cross-env NODE_ENV=development nodemon app"
   },
   "author": "Luwafemi",

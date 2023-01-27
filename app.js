@@ -23,6 +23,15 @@ connectDB();
 
 const app = express();
 
+//SUGGESTED CODE FOR HTTPS REDIRECT
+// if (process.env.NODE_ENV === "production") {
+//   app.use((req, res, next) => {
+//     if (req.header("x-forwarded-proto") !== "https")
+//       res.redirect(`https://${req.header("host")}${req.url}`);
+//     else next();
+//   });
+// }
+
 //Body parser middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
